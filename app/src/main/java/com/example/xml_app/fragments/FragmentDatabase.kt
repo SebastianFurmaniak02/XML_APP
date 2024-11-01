@@ -23,6 +23,7 @@ class FragmentDatabase : Fragment(), DatabaseAdapter.OnItemClickListener {
 
         db = DatabaseHandler(requireContext())
         databaseAdapter = DatabaseAdapter(db.getAllParticipants(), this)
+        //db.clearDatabase()
     }
 
     override fun onCreateView(

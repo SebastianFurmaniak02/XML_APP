@@ -11,12 +11,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.SeekBar
+import android.widget.Switch
 import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import com.example.xml_app.R
 import com.example.xml_app.database.DatabaseHandler
 import com.example.xml_app.database.ParticipantDB
 
+@SuppressLint("UseSwitchCompatOrMaterialCode")
 class FragmentForm : Fragment(), View.OnClickListener {
 
     private lateinit var firstNameEditText: EditText
@@ -25,7 +27,7 @@ class FragmentForm : Fragment(), View.OnClickListener {
     private lateinit var maleButton: RadioButton
     private lateinit var femaleButton: RadioButton
     private lateinit var otherButton: RadioButton
-    private lateinit var studentStatusSwitch: SwitchCompat
+    private lateinit var studentStatusSwitch: Switch
     private lateinit var skillLevelSeekBar: SeekBar
     private lateinit var confirmButton: Button
 
@@ -56,6 +58,8 @@ class FragmentForm : Fragment(), View.OnClickListener {
         confirmButton = requireView().findViewById(R.id.buttonConfirm)
         confirmButton.setOnClickListener(this)
 
+        db = DatabaseHandler(requireContext())
+
         skillLevelSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 seekBarProgress = progress
@@ -78,9 +82,13 @@ class FragmentForm : Fragment(), View.OnClickListener {
                 emptyEdits()
             else if (!Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.trim()).matches())
                 wrongEmail()
-            else
+            else if (!maleButton.isChecked && !femaleButton.isChecked && !otherButton.isChecked) {
+                noGender()
+            }
+            else {
                 addParticipant()
                 confirmationSuccessful()
+            }
         }
     }
 
@@ -131,6 +139,17 @@ class FragmentForm : Fragment(), View.OnClickListener {
     private fun wrongEmail() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setMessage("The email was filled in incorrectly.")
+            .setCancelable(false)
+            .setPositiveButton("Ok") { dialog, _ ->
+                dialog.dismiss()
+            }
+        val alert = builder.create()
+        alert.show()
+    }
+
+    private fun noGender() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setMessage("Select gender.")
             .setCancelable(false)
             .setPositiveButton("Ok") { dialog, _ ->
                 dialog.dismiss()

@@ -178,7 +178,11 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
         if (isResult) {
          var result = calculatorScreen.text.toString().toDouble()
             result *= -1
-            calculatorScreen.text = result.toString()
+            if (result % 1.0 == 0.0) {
+                calculatorScreen.text = result.toInt().toString()
+            } else {
+                calculatorScreen.text = result.toString()
+            }
         }
     }
 

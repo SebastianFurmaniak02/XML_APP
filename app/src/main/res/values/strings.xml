@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">XML_APP</string>
+    <string name="x_square">X<SUP>2</SUP></string>
+    <string name="square_root_symbol">\u221a</string>
+    <string name="division">\u00F7</string>
+    <string name="multiplication">\u0078</string>
+</resources>

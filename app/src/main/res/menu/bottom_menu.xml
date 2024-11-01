@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/calculator"
+        android:title="Calculator"
+        android:icon="@drawable/ic_action_calculator"
+        />
+
+    <item
+        android:id="@+id/sensor"
+        android:title="Sensor"
+        android:icon="@drawable/ic_action_sensor"
+        />
+
+    <item
+        android:id="@+id/form"
+        android:title="Form"
+        android:icon="@drawable/ic_action_form"
+        />
+
+</menu>

@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.xml_app.fragments.FragmentCalculator
-import com.example.xml_app.fragments.FragmentDatabase
+import com.example.xml_app.fragments.fragmentDatabase.FragmentDatabase
 import com.example.xml_app.fragments.FragmentForm
 import com.example.xml_app.fragments.FragmentSensor
 import com.google.android.material.bottomnavigation.BottomNavigationView

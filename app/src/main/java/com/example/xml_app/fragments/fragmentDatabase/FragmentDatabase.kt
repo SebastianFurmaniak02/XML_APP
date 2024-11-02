@@ -1,5 +1,6 @@
-package com.example.xml_app.fragments
+package com.example.xml_app.fragments.fragmentDatabase
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,9 +42,15 @@ class FragmentDatabase : Fragment(), DatabaseAdapter.OnItemClickListener {
         return view
     }
 
-
+    override fun onResume() {
+        super.onResume()
+        databaseAdapter.refreshData(db.getAllParticipants())
+    }
 
     override fun onItemClick(participant: ParticipantDB) {
-
+        val intent = Intent(requireContext(), ParticipantDetails::class.java).apply {
+            putExtra("PARTICIPANT_ID", participant.id.toString())
+        }
+        startActivity(intent)
     }
 }

@@ -182,6 +182,7 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
                 calculatorScreen.text = result.toInt().toString()
             } else {
                 calculatorScreen.text = result.toString()
+                isDot = true
             }
         }
     }
@@ -197,7 +198,12 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
         var result = calculatorScreen.text.toString().toDouble()
         if (isResult && result > 0) {
             result = sqrt(result)
-            calculatorScreen.text = result.toString()
+            if (result % 1.0 == 0.0) {
+                calculatorScreen.text = result.toInt().toString()
+            } else {
+                calculatorScreen.text = result.toString()
+                isDot = true
+            }
         }
     }
 
@@ -205,7 +211,12 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
         if (isResult) {
             var result = calculatorScreen.text.toString().toDouble()
             result *= result
-            calculatorScreen.text = result.toString()
+            if (result % 1.0 == 0.0) {
+                calculatorScreen.text = result.toInt().toString()
+            } else {
+                calculatorScreen.text = result.toString()
+                isDot = true
+            }
         }
     }
 
@@ -271,6 +282,7 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
             calculatorScreen.text = result.toInt().toString()
         } else {
             calculatorScreen.text = result.toString()
+            isDot = true
         }
     }
 }

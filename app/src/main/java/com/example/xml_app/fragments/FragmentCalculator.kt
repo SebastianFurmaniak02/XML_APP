@@ -166,7 +166,7 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
             isDot = true
             isLastSymbol = false
             calculatorScreen.text = calculatorScreen.text.toString() + symbol
-        } else if (symbol != ".") {
+        } else if (symbol != "." && !isLastSymbol) {
             isResult = false
             isDot = false
             isLastSymbol = true
@@ -221,6 +221,8 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
     }
 
     private fun calculateResult() {
+
+        if (isLastSymbol) return
 
         var screen = calculatorScreen.text.toString().replace("--","-~").replace("+-","+~").replace("/-","/~").replace("*-","*~")
         Log.e("USER_LOG", screen.toString())

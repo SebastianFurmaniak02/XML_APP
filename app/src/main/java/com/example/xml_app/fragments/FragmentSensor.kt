@@ -18,11 +18,9 @@ import androidx.fragment.app.Fragment
 import com.example.xml_app.R
 
 
-class FragmentSensor : Fragment(), /*View.OnClickListener,*/ SensorEventListener {
+class FragmentSensor : Fragment(), SensorEventListener {
 
     private lateinit var imageSun: ImageView
-    //private lateinit var button: Button
-    //private var isDark = false
     private var sensorManager: SensorManager?=null
     private var sensor: Sensor?=null
 
@@ -40,11 +38,6 @@ class FragmentSensor : Fragment(), /*View.OnClickListener,*/ SensorEventListener
         super.onViewCreated(view, savedInstanceState)
 
         imageSun  = requireView().findViewById(R.id.imageSun);
-        //button = requireView().findViewById(R.id.button)
-        //button.setOnClickListener(this)
-        /*imageSun.setImageBitmap(
-            setBrightness(BitmapFactory.decodeResource(resources, R.drawable.ic_action_sun),168)
-        )*/
         sensorManager = context?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_LIGHT)
     }
@@ -110,35 +103,6 @@ class FragmentSensor : Fragment(), /*View.OnClickListener,*/ SensorEventListener
         // return final image
         return bmOut
     }
-/*
-    override fun onClick(v: View?) {
-        v?.let { but ->
-            when(but.id) {
-                R.id.button -> {
-                    if (isDark) {
-                        imageSun.setImageBitmap(
-                            setBrightness(
-                                BitmapFactory.decodeResource(
-                                    resources,
-                                    R.drawable.ic_action_sun
-                                ), 168
-                            )
-                        )
-                    } else {
-                        imageSun.setImageBitmap(
-                            setBrightness(
-                                BitmapFactory.decodeResource(
-                                    resources,
-                                    R.drawable.ic_action_sun
-                                ), -168
-                            )
-                        )
-                    }
-                    isDark = !isDark
-                }
-            }
-        }
-    }*/
 
     override fun onSensorChanged(event: SensorEvent?) {
         val brightness = event!!.values[0] * (160/50) - 80

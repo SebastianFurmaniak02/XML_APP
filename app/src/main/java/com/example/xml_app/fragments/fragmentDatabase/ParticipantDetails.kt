@@ -22,39 +22,28 @@ class ParticipantDetails : AppCompatActivity() {
         setContentView(R.layout.participant_details)
 
         db = DatabaseHandler(this)
-
-
         val participantID = intent.getStringExtra("PARTICIPANT_ID")
+        val record = participantID?.let { db.getRecord(it) }
+
+        if (record != null) {
+            participant = record
+        } else {
+            Toast.makeText(this, "Participant doesn't exist.", Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
 
-        if (savedInstanceState == null) {
-            if (participantID != null) {
-                val record = db.getRecord(participantID)
-                if (record != null) {
-                    participant = record
-                } else {
-                    Toast.makeText(this, "Participant doesn't exist.", Toast.LENGTH_SHORT)
-                        .show()
-                    finish()
-                }
-            } else {
-                Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show()
-                finish()
-            }
-
-            findViewById<TextView>(R.id.textViewParticipantFirstName).text = "First name: " + participant.firstName
-            findViewById<TextView>(R.id.textViewParticipantLastName).text = "Last name: " + participant.lastName
-            findViewById<TextView>(R.id.textViewParticipantEmail).text = "Email: " + participant.email
-            findViewById<TextView>(R.id.textViewParticipantGender).text = "Gender: " + participant.gender
-            findViewById<TextView>(R.id.textViewParticipantStudentStatus).text = "Student status: " + when {
+        findViewById<TextView>(R.id.textViewParticipantFirstName).text = "First name: " + participant.firstName
+        findViewById<TextView>(R.id.textViewParticipantLastName).text = "Last name: " + participant.lastName
+        findViewById<TextView>(R.id.textViewParticipantEmail).text = "Email: " + participant.email
+        findViewById<TextView>(R.id.textViewParticipantGender).text = "Gender: " + participant.gender
+        findViewById<TextView>(R.id.textViewParticipantStudentStatus).text = "Student status: " + when {
                 participant.studentStatus == 1 -> "Yes"
                 else -> "No"
             }
-            findViewById<TextView>(R.id.textViewParticipantSkillLevel).text = "Skill level: " + participant.skillLevel.toString()
-
-            findViewById<Button>(R.id.buttonDelete).setOnClickListener {
-                deleteParticipant()
-            }
+        findViewById<TextView>(R.id.textViewParticipantSkillLevel).text = "Skill level: " + participant.skillLevel.toString()
+        findViewById<Button>(R.id.buttonDelete).setOnClickListener {
+            deleteParticipant()
         }
     }
 

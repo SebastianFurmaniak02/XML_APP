@@ -14,15 +14,15 @@
         />
 
     <item
-        android:id="@+id/form"
-        android:title="Form"
-        android:icon="@drawable/ic_action_form"
-        />
-
-    <item
         android:id="@+id/database"
         android:title="Database"
         android:icon="@drawable/ic_action_database"
+        />
+
+    <item
+        android:id="@+id/statistics"
+        android:title="Statistics"
+        android:icon="@drawable/ic_action_statistics"
         />
 
 </menu>

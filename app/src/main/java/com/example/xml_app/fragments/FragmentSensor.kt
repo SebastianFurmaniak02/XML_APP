@@ -1,5 +1,6 @@
 package com.example.xml_app.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -14,6 +15,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
+import android.widget.SeekBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.xml_app.R
 
@@ -21,6 +25,8 @@ import com.example.xml_app.R
 class FragmentSensor : Fragment(), SensorEventListener {
 
     private lateinit var imageSun: ImageView
+    private lateinit var progressBar: ProgressBar
+    private lateinit var textViewSenorOutput: TextView
     private var sensorManager: SensorManager?=null
     private var sensor: Sensor?=null
 
@@ -40,6 +46,8 @@ class FragmentSensor : Fragment(), SensorEventListener {
         imageSun  = requireView().findViewById(R.id.imageSun);
         sensorManager = context?.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager?.getDefaultSensor(Sensor.TYPE_LIGHT)
+        progressBar = requireView().findViewById(R.id.progressBar)
+        textViewSenorOutput = requireView().findViewById(R.id.TextViewSensorOutput)
     }
 
     override fun onResume() {
@@ -104,13 +112,23 @@ class FragmentSensor : Fragment(), SensorEventListener {
         return bmOut
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onSensorChanged(event: SensorEvent?) {
-        val brightness = event!!.values[0] * (160/50) - 80
+        val brightness = (event!!.values[0] * 210/10000) - 50
         imageSun.setImageBitmap(
             setBrightness(BitmapFactory.decodeResource(resources, R.drawable.ic_action_sun),-brightness.toInt())
         )
         Log.i("USER_LOG", brightness.toString())
         Log.i("USER_LOG", event.values[0].toString())
+        if (brightness <= 110) {
+            val percentageOutput = ((brightness + 50) * 100 / 210).toInt()
+            textViewSenorOutput.text = "$percentageOutput%"
+            progressBar.progress = percentageOutput
+        }
+        else {
+            textViewSenorOutput.text = "100%+"
+            progressBar.progress = 100
+        }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {

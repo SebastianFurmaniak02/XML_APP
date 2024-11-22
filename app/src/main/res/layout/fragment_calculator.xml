@@ -18,8 +18,7 @@
         android:maxLines="1"
         android:text="0"
         android:gravity="end|bottom"
-        android:textAlignment="viewEnd"
-        android:textColor="@color/purple">
+        android:textAlignment="viewEnd">
 
     </TextView>
 
@@ -35,6 +34,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="@string/x_square"
             android:maxLines="1"
             android:autoSizeTextType="uniform"
@@ -46,6 +46,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="@string/square_root_symbol"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -56,6 +57,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="C"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -66,6 +68,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="@string/division"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -83,6 +86,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="1"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -93,6 +97,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="2"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -103,6 +108,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="3"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -113,6 +119,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="@string/multiplication"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -131,6 +138,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="4"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -141,6 +149,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="5"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -151,6 +160,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="6"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -161,6 +171,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="-"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -178,6 +189,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="7"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -188,6 +200,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="8"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -198,6 +211,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="9"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -208,6 +222,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="+"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -220,23 +235,25 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/calculator_sign"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="2dp"
-            android:layout_weight="1"
-            android:text="+/-"
-            android:maxLines="1"
-            android:autoSizeTextType="uniform"
-            app:cornerRadius="15dp" />
-
-        <Button
             android:id="@+id/calculator_0"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/blueTertiary"
             android:text="0"
+            android:autoSizeTextType="uniform"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/calculator_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
+            android:text="+/-"
+            android:maxLines="1"
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
 
@@ -246,6 +263,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="."
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />
@@ -256,6 +274,7 @@
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:layout_weight="1"
+            android:backgroundTint="@color/bluePrimary"
             android:text="="
             android:autoSizeTextType="uniform"
             app:cornerRadius="15dp" />

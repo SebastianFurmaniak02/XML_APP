@@ -5,6 +5,15 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+data class ParticipantDB(
+    val id: Int?,
+    val firstName: String,
+    val lastName: String,
+    val email: String,
+    val gender: String,
+    val studentStatus: Int,
+    val skillLevel: Int
+)
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)  {
     companion object {
         private const val DATABASE_NAME = "participants.db"

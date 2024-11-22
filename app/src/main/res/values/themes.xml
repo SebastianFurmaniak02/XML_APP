@@ -2,7 +2,18 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.XML_APP" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/bluePrimary</item>
+        <item name="colorSecondary">@color/blueSecondary</item>
+        <item name="colorTertiary">@color/blueTertiary</item>
+        <item name="colorSurface">@color/screenGrayLight</item>
+        <item name="background">@color/darkGray</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnTertiary">@color/black</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="android:navigationBarColor">@color/blueSecondary</item>
+        <item name="android:statusBarColor">@color/blueSecondary</item>
     </style>
 
     <style name="Theme.XML_APP" parent="Base.Theme.XML_APP" />

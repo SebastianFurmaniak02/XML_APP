@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xml_app.R
-import com.example.xml_app.fragments.fragmentDatabase.FragmentDatabase
+import com.example.xml_app.fragments.FragmentDatabase
 
 class DatabaseAdapter(private var participants: List<ParticipantDB>, private val itemClickListener: FragmentDatabase) :
     RecyclerView.Adapter<DatabaseAdapter.ParticipantViewHolder>() {

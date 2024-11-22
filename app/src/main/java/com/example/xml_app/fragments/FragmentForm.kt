@@ -19,7 +19,7 @@ import com.example.xml_app.database.DatabaseHandler
 import com.example.xml_app.database.ParticipantDB
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
-class FragmentForm : Fragment(), View.OnClickListener {
+class FragmentStatistics : Fragment(), View.OnClickListener {
 
     private lateinit var firstNameEditText: EditText
     private lateinit var lastNameEditText: EditText
@@ -82,9 +82,6 @@ class FragmentForm : Fragment(), View.OnClickListener {
                 emptyEdits()
             else if (!Patterns.EMAIL_ADDRESS.matcher(emailEditText.text.trim()).matches())
                 wrongEmail()
-            else if (!maleButton.isChecked && !femaleButton.isChecked && !otherButton.isChecked) {
-                noGender()
-            }
             else {
                 addParticipant()
                 confirmationSuccessful()
@@ -116,7 +113,7 @@ class FragmentForm : Fragment(), View.OnClickListener {
 
     private fun confirmationSuccessful() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setMessage("The form has been sent.\n First name: ${firstNameEditText.text}\n Last name: ${lastNameEditText.text}\n Email: ${emailEditText.text}")
+        builder.setMessage("The form has been sent.")
             .setCancelable(false)
             .setPositiveButton("Ok") { dialog, _ ->
                 dialog.dismiss()
@@ -127,7 +124,7 @@ class FragmentForm : Fragment(), View.OnClickListener {
 
     private fun emptyEdits() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setMessage("Some fields were not completed correctly.")
+        builder.setMessage("Some fields are empty.")
             .setCancelable(false)
             .setPositiveButton("Ok") { dialog, _ ->
                 dialog.dismiss()
@@ -138,18 +135,7 @@ class FragmentForm : Fragment(), View.OnClickListener {
 
     private fun wrongEmail() {
         val builder = AlertDialog.Builder(requireContext())
-        builder.setMessage("The email was filled in incorrectly.")
-            .setCancelable(false)
-            .setPositiveButton("Ok") { dialog, _ ->
-                dialog.dismiss()
-            }
-        val alert = builder.create()
-        alert.show()
-    }
-
-    private fun noGender() {
-        val builder = AlertDialog.Builder(requireContext())
-        builder.setMessage("Select gender.")
+        builder.setMessage("Invalid email address.")
             .setCancelable(false)
             .setPositiveButton("Ok") { dialog, _ ->
                 dialog.dismiss()

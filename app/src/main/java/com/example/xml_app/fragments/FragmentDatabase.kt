@@ -1,4 +1,4 @@
-package com.example.xml_app.fragments.fragmentDatabase
+package com.example.xml_app.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xml_app.R
+import com.example.xml_app.activities.ParticipantDetailsActivity
 import com.example.xml_app.database.DatabaseAdapter
 import com.example.xml_app.database.DatabaseHandler
 import com.example.xml_app.database.ParticipantDB
@@ -48,7 +49,7 @@ class FragmentDatabase : Fragment(), DatabaseAdapter.OnItemClickListener {
     }
 
     override fun onItemClick(participant: ParticipantDB) {
-        val intent = Intent(requireContext(), ParticipantDetails::class.java).apply {
+        val intent = Intent(requireContext(), ParticipantDetailsActivity::class.java).apply {
             putExtra("PARTICIPANT_ID", participant.id.toString())
         }
         startActivity(intent)

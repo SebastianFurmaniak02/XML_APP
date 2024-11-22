@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -34,6 +36,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        //noinspection DataBindingWithoutKapt
         dataBinding = true
     }
 }

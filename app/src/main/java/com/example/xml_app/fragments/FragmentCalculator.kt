@@ -8,8 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.example.xml_app.MainActivity
 import com.example.xml_app.R
+import com.example.xml_app.viewModel.BottomBarViewModel
+import com.example.xml_app.viewModel.CalculatorViewModel
 import kotlin.math.sqrt
 
 class FragmentCalculator : Fragment(), View.OnClickListener {
@@ -35,11 +40,14 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
     private lateinit var buttonClear : Button
     private lateinit var buttonEqual : Button
     private lateinit var calculatorScreen : TextView
-    private var isDot : Boolean = false
-    private var isResult : Boolean = true
-    private var isLastSymbol : Boolean = false
 
+    private lateinit var viewModel: CalculatorViewModel
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(requireActivity())[CalculatorViewModel::class.java]
+        Log.i("USER_LOG1",viewModel.calculatorScreenInfo.value.screen)
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -72,8 +80,8 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
         buttonClear = setButtonListener(R.id.calculator_clear)
         buttonEqual = setButtonListener(R.id.calculator_equal)
         calculatorScreen = requireView().findViewById(R.id.calculator_screen)
-        calculatorScreen.text = "0"
-
+        calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
+        Log.i("USER_LOG2",viewModel.calculatorScreenInfo.value.screen)
     }
 
     private fun setButtonListener(id: Int): Button {
@@ -87,204 +95,86 @@ class FragmentCalculator : Fragment(), View.OnClickListener {
         v?.let {button ->
             when (button.id) {
                 R.id.calculator_0 -> {
-                    setNumberOnScreen("0")
+                    viewModel.setNumberOnScreen("0")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_1 -> {
-                    setNumberOnScreen("1")
+                    viewModel.setNumberOnScreen("1")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_2 -> {
-                    setNumberOnScreen("2")
+                    viewModel.setNumberOnScreen("2")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_3 -> {
-                    setNumberOnScreen("3")
+                    viewModel.setNumberOnScreen("3")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_4 -> {
-                    setNumberOnScreen("4")
+                    viewModel.setNumberOnScreen("4")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_5 -> {
-                    setNumberOnScreen("5")
+                    viewModel.setNumberOnScreen("5")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_6 -> {
-                    setNumberOnScreen("6")
+                    viewModel.setNumberOnScreen("6")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_7 -> {
-                    setNumberOnScreen("7")
+                    viewModel.setNumberOnScreen("7")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_8 -> {
-                    setNumberOnScreen("8")
+                    viewModel.setNumberOnScreen("8")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_9 -> {
-                    setNumberOnScreen("9")
+                    viewModel.setNumberOnScreen("9")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_clear -> {
-                    clearScreen()
+                    viewModel.clearScreen()
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_plus -> {
-                    setSymbolOnScreen("+")
+                    viewModel.setSymbolOnScreen("+")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_minus -> {
-                    setSymbolOnScreen("-")
+                    viewModel.setSymbolOnScreen("-")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_multiplication -> {
-                    setSymbolOnScreen("*")
+                    viewModel.setSymbolOnScreen("*")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_division -> {
-                    setSymbolOnScreen("/")
+                    viewModel.setSymbolOnScreen("/")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_square -> {
-                    square()
+                    viewModel.square()
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_square_root -> {
-                    squareRoot()
+                    viewModel.squareRoot()
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_dot -> {
-                    setSymbolOnScreen(".")
+                    viewModel.setSymbolOnScreen(".")
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_sign -> {
-                    changeSign()
+                    viewModel.changeSign()
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
                 R.id.calculator_equal -> {
-                    calculateResult()
+                    viewModel.calculateResult()
+                    calculatorScreen.text = viewModel.calculatorScreenInfo.value.screen
                 }
             }
-        }
-    }
-
-    @SuppressLint("SetTextI18n")
-    private fun setNumberOnScreen(number: String) {
-        if (calculatorScreen.text.toString() == "0") {
-            calculatorScreen.text = number
-        } else {
-            calculatorScreen.text = calculatorScreen.text.toString() + number
-        }
-        isLastSymbol = false
-    }
-
-    @SuppressLint("SetTextI18n")
-    private fun setSymbolOnScreen(symbol: String) {
-        if (symbol == "." && !isDot) {
-            isDot = true
-            isLastSymbol = false
-            calculatorScreen.text = calculatorScreen.text.toString() + symbol
-        } else if (symbol != "." && !isLastSymbol) {
-            isResult = false
-            isDot = false
-            isLastSymbol = true
-            calculatorScreen.text = calculatorScreen.text.toString() + symbol
-        }
-    }
-
-    private fun changeSign() {
-        if (isResult) {
-         var result = calculatorScreen.text.toString().toDouble()
-            result *= -1
-            if (result % 1.0 == 0.0) {
-                calculatorScreen.text = result.toInt().toString()
-            } else {
-                calculatorScreen.text = result.toString()
-                isDot = true
-            }
-        }
-    }
-
-    private fun clearScreen() {
-        calculatorScreen.text = "0"
-        isResult = true
-        isDot = false
-        isLastSymbol = false
-    }
-
-    private fun squareRoot() {
-        var result = calculatorScreen.text.toString().toDouble()
-        if (isResult && result > 0) {
-            result = sqrt(result)
-            if (result % 1.0 == 0.0) {
-                calculatorScreen.text = result.toInt().toString()
-            } else {
-                calculatorScreen.text = result.toString()
-                isDot = true
-            }
-        }
-    }
-
-    private fun square() {
-        if (isResult) {
-            var result = calculatorScreen.text.toString().toDouble()
-            result *= result
-            if (result % 1.0 == 0.0) {
-                calculatorScreen.text = result.toInt().toString()
-            } else {
-                calculatorScreen.text = result.toString()
-                isDot = true
-            }
-        }
-    }
-
-    private fun calculateResult() {
-
-        if (isLastSymbol) return
-
-        var screen = calculatorScreen.text.toString().replace("--","-~").replace("+-","+~").replace("/-","/~").replace("*-","*~")
-        Log.e("USER_LOG", screen.toString())
-        if (screen.startsWith("-")) {
-            screen = screen.removePrefix("-")
-            screen = "~$screen"
-            }
-        Log.i("USER_LOG", screen.toString())
-        val numbers = screen.split("+", "-", "*", "/").filter { it.isNotEmpty() }.toMutableList()
-        val operators = screen.split(Regex("[~0-9.]+")).filter { it.isNotEmpty() }.toMutableList()
-        var result = 0.0
-        var index = 0
-
-        Log.e("USER_LOG", screen.toString())
-        for (i in numbers.indices) {
-            numbers[i] = numbers[i].replace("~", "-")
-        }
-        Log.i("USER_LOG", screen.toString())
-
-        Log.i("USER_LOG", numbers.toString())
-        Log.i("USER_LOG", operators.toString())
-
-        while (index != -1) {
-            index = operators.indexOfFirst { it in setOf("*", "/") }
-            if (index != -1) {
-                val number1 = numbers[index].toDouble()
-                val number2 = numbers[index + 1].toDouble()
-                result = if (operators[index] == "*") {
-                    number1 * number2
-                } else {
-                    number1 / number2
-                }
-                operators.removeAt(index)
-                numbers.removeAt(index)
-                numbers[index] = result.toString()
-            }
-            Log.i("USER_LOG", result.toString())
-        }
-        index = 0
-        while (index != -1) {
-            index = operators.indexOfFirst { it in setOf("+", "-") }
-            if (index != -1) {
-                val number1 = numbers[index].toDouble()
-                val number2 = numbers[index + 1].toDouble()
-                result = if (operators[index] == "+") {
-                    number1 + number2
-                } else {
-                    number1 - number2
-                }
-                operators.removeAt(index)
-                numbers.removeAt(index)
-                numbers[index] = result.toString()
-            }
-            Log.i("USER_LOG", result.toString())
-        }
-        clearScreen()
-
-        if (result % 1.0 == 0.0) {
-            calculatorScreen.text = result.toInt().toString()
-        } else {
-            calculatorScreen.text = result.toString()
-            isDot = true
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.xml_app
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -13,6 +14,7 @@ import com.example.xml_app.fragments.FragmentDatabase
 import com.example.xml_app.fragments.FragmentSensor
 import com.example.xml_app.fragments.FragmentStatistics
 import com.example.xml_app.viewModel.BottomBarViewModel
+import com.example.xml_app.viewModel.CalculatorViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProvider(this)[BottomBarViewModel::class.java]
 
+        Log.i("USER_LOG",viewModel.currentFragment.value.toString())
         val bottomNav = findViewById<BottomNavigationView>(R.id.BottomNavMenu)
         viewModel.currentFragment.value?.let { showFragment(it) }
         bottomNav.setOnNavigationItemSelectedListener { item ->

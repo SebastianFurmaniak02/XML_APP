@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="2dp"
+    >
+
+    <TextView
+        android:id="@+id/calculator_screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:autoSizeTextType="uniform"
+        android:ellipsize="end"
+        android:clickable="false"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:text="0"
+        android:gravity="end|bottom"
+        android:textAlignment="viewEnd">
+
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="1"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="4"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="7"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="2"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="5"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="8"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="3"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="6"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="9"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_plus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="+"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_minus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="-"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/blueTertiary"
+                android:text="0"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_multiplication"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="@string/multiplication"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_division"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="@string/division"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_dot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="."
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_square"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="@string/x_square"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_square_root"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="@string/square_root_symbol"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="+/-"
+                android:maxLines="1"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/calculator_clear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="0.33"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="C"
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+            <Button
+                android:id="@+id/calculator_equal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="0.67"
+                android:backgroundTint="@color/bluePrimary"
+                android:text="="
+                android:autoSizeTextType="uniform"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

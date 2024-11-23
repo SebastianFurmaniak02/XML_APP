@@ -3,6 +3,7 @@ package com.example.xml_app.activities
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -12,7 +13,7 @@ import com.example.xml_app.R
 import com.example.xml_app.database.DatabaseHandler
 import com.example.xml_app.database.ParticipantDB
 
-class ParticipantDetailsActivity : AppCompatActivity() {
+class ParticipantDetailsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var db: DatabaseHandler
     private lateinit var participant: ParticipantDB
 
@@ -20,8 +21,7 @@ class ParticipantDetailsActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.participant_details)
+        setContentView(R.layout.participant_details_activity)
 
         db = DatabaseHandler(this)
         val participantID = intent.getStringExtra("PARTICIPANT_ID")
@@ -71,5 +71,9 @@ class ParticipantDetailsActivity : AppCompatActivity() {
             }
         val alert = builder.create()
         alert.show()
+    }
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
     }
 }

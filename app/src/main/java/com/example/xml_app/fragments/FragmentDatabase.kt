@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xml_app.R
+import com.example.xml_app.activities.FormActivity
 import com.example.xml_app.activities.ParticipantDetailsActivity
 import com.example.xml_app.database.DatabaseAdapter
 import com.example.xml_app.database.DatabaseHandler
@@ -25,7 +27,6 @@ class FragmentDatabase : Fragment(), DatabaseAdapter.OnItemClickListener {
 
         db = DatabaseHandler(requireContext())
         databaseAdapter = DatabaseAdapter(db.getAllParticipants(), this)
-        //db.clearDatabase()
     }
 
     override fun onCreateView(
@@ -39,6 +40,11 @@ class FragmentDatabase : Fragment(), DatabaseAdapter.OnItemClickListener {
         recyclerView = view.findViewById(R.id.stationsRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = databaseAdapter
+
+        view.findViewById<Button>(R.id.buttonStartActivityForm).setOnClickListener {
+            val intent = Intent(requireContext(), FormActivity::class.java)
+            startActivity(intent)
+        }
 
         return view
     }

@@ -114,21 +114,14 @@ class FragmentSensor : Fragment(), SensorEventListener {
 
     @SuppressLint("SetTextI18n")
     override fun onSensorChanged(event: SensorEvent?) {
-        val brightness = (event!!.values[0] * 210/10000) - 50
+        val sensorOutput = event!!.values[0]
+        val brightness = if (sensorOutput>= 10000) 110f else (sensorOutput* 160/10000) - 50
+        val percentageOutput = ((brightness + 50) * 100 / 160).toInt()
+        progressBar.progress = (percentageOutput/100)
+        textViewSenorOutput.text = "${percentageOutput}%"
         imageSun.setImageBitmap(
             setBrightness(BitmapFactory.decodeResource(resources, R.drawable.ic_action_sun),-brightness.toInt())
         )
-        Log.i("USER_LOG", brightness.toString())
-        Log.i("USER_LOG", event.values[0].toString())
-        if (brightness <= 110) {
-            val percentageOutput = ((brightness + 50) * 100 / 210).toInt()
-            textViewSenorOutput.text = "$percentageOutput%"
-            progressBar.progress = percentageOutput
-        }
-        else {
-            textViewSenorOutput.text = "100%+"
-            progressBar.progress = 100
-        }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {

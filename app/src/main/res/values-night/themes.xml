@@ -14,5 +14,6 @@
         <item name="colorOnBackground">@color/white</item>
         <item name="android:navigationBarColor">@color/blueSecondary</item>
         <item name="android:statusBarColor">@color/blueSecondary</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 </resources>

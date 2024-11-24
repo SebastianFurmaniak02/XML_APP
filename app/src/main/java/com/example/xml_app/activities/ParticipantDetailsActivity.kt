@@ -35,8 +35,7 @@ class ParticipantDetailsActivity : AppCompatActivity(), View.OnClickListener {
         }
 
 
-        findViewById<TextView>(R.id.textViewParticipantFirstName).text = participant.firstName
-        findViewById<TextView>(R.id.textViewParticipantLastName).text = participant.lastName
+        findViewById<TextView>(R.id.textViewParticipantName).text = participant.firstName + " " + participant.lastName
         findViewById<TextView>(R.id.textViewParticipantEmail).text = participant.email
         findViewById<TextView>(R.id.textViewParticipantGender).text = participant.gender
         findViewById<TextView>(R.id.textViewParticipantStudentStatus).text = when {
@@ -50,10 +49,10 @@ class ParticipantDetailsActivity : AppCompatActivity(), View.OnClickListener {
             4 -> "Proficient"
             else -> "Advanced"
         }
-        findViewById<Button>(R.id.buttonDelete).setOnClickListener {
+        findViewById<Button>(R.id.buttonDeleteParticipant).setOnClickListener {
             deleteParticipant()
         }
-        findViewById<Button>(R.id.buttonBack).setOnClickListener {
+        findViewById<Button>(R.id.buttonBackParticipant).setOnClickListener {
             finish()
         }
     }
@@ -74,6 +73,5 @@ class ParticipantDetailsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
     }
 }

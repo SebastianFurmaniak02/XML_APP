@@ -10,16 +10,12 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.SeekBar
 import android.widget.Switch
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.example.xml_app.R
 import com.example.xml_app.database.DatabaseHandler
 import com.example.xml_app.database.ParticipantDB
-import com.example.xml_app.viewModel.CalculatorViewModel
 import com.example.xml_app.viewModel.FormViewModel
 
 class FormActivity : AppCompatActivity(), View.OnClickListener {

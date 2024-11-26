@@ -118,7 +118,13 @@ class FormActivity : AppCompatActivity(), View.OnClickListener {
                 viewModel.formScreenInfo.value.studentStatus -> 1
                 else -> 0
             },
-            skillLevel = viewModel.formScreenInfo.value.skillLevel
+            skillLevel = when (viewModel.formScreenInfo.value.skillLevel) {
+                0 -> "Beginner"
+                1 -> "Novice"
+                2 -> "Intermediate"
+                3 -> "Proficient"
+                else -> "Advanced"
+            }
         )
         db.insertData(participantDB)
     }

@@ -42,13 +42,7 @@ class ParticipantDetailsActivity : AppCompatActivity(), View.OnClickListener {
                 participant.studentStatus == 1 -> "Yes"
                 else -> "No"
             }
-        findViewById<TextView>(R.id.textViewParticipantSkillLevel).text = when (participant.skillLevel) {
-            1 -> "Beginner"
-            2 -> "Novice"
-            3 -> "Intermediate"
-            4 -> "Proficient"
-            else -> "Advanced"
-        }
+        findViewById<TextView>(R.id.textViewParticipantSkillLevel).text = participant.skillLevel
         findViewById<Button>(R.id.buttonDeleteParticipant).setOnClickListener {
             deleteParticipant()
         }

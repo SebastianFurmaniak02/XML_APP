@@ -12,7 +12,7 @@ data class ParticipantDB(
     val email: String,
     val gender: String,
     val studentStatus: Int,
-    val skillLevel: Int
+    val skillLevel: String
 )
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION)  {
     companion object {
@@ -74,7 +74,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
             val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
             val gender = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_GENDER))
             val studentStatus = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_STUDENT_STATUS))
-            val skillLevel = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_SKILL_LEVEL))
+            val skillLevel = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_SKILL_LEVEL))
 
             val dbRecord = ParticipantDB(id, firstName, lastName, email, gender, studentStatus, skillLevel)
             factsList.add(dbRecord)
@@ -102,7 +102,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
             val email = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_EMAIL))
             val gender = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_GENDER))
             val studentStatus = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_STUDENT_STATUS))
-            val skillLevel = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_SKILL_LEVEL))
+            val skillLevel = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_SKILL_LEVEL))
 
             cursor.close()
             db.close()

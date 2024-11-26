@@ -27,10 +27,13 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+
+
         val viewModel = ViewModelProvider(this)[BottomBarViewModel::class.java]
 
         Log.i("USER_LOG",viewModel.currentFragment.value.toString())
         val bottomNav = findViewById<BottomNavigationView>(R.id.BottomNavMenu)
+        bottomNav.itemActiveIndicatorColor = getColorStateList(R.color.blueTertiary)
         viewModel.currentFragment.value?.let { showFragment(it) }
         bottomNav.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {

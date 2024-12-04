@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:background="@color/bluePrimary">
+        android:background="?attr/colorPrimary">
 
 
         <TextView
@@ -31,7 +31,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="start|center_vertical"
-            android:backgroundTint="@color/blueSecondary"
+            android:backgroundTint="?attr/colorSecondary"
             android:background="@drawable/baseline_keyboard_backspace_24"
             />
 

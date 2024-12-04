@@ -129,6 +129,11 @@ class CalculatorViewModel : ViewModel() {
                 result = if (operators[index] == "*") {
                     number1 * number2
                 } else {
+                    if (number2 == 0.0) {
+                        clearScreen()
+                        _calculatorScreenInfo.value.screen = Double.NaN.toString()
+                        return
+                    }
                     number1 / number2
                 }
                 operators.removeAt(index)

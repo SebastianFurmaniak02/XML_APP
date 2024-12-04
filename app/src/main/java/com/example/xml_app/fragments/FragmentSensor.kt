@@ -117,7 +117,7 @@ class FragmentSensor : Fragment(), SensorEventListener {
         val sensorOutput = event!!.values[0]
         val brightness = if (sensorOutput>= 10000) 110f else (sensorOutput* 160/10000) - 50
         val percentageOutput = ((brightness + 50) * 100 / 160).toInt()
-        progressBar.progress = (percentageOutput/100)
+        progressBar.progress = percentageOutput
         textViewSenorOutput.text = "${percentageOutput}%"
         imageSun.setImageBitmap(
             setBrightness(BitmapFactory.decodeResource(resources, R.drawable.ic_action_sun),-brightness.toInt())

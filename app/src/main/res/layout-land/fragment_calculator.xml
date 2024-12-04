@@ -5,12 +5,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="85dp"
     >
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
-        android:background="@color/bluePrimary">
+        android:background="?attr/colorPrimary">
 
         <TextView
             android:layout_width="wrap_content"
@@ -59,7 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="1"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -69,7 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="4"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -79,7 +82,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="7"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -96,7 +100,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="2"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -106,7 +111,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="5"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -116,7 +122,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="8"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -133,7 +140,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="3"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -143,7 +151,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="6"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -153,7 +162,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="9"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -170,7 +180,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="+"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -180,7 +191,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="-"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -190,7 +202,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blueTertiary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorTertiary"
                 android:text="0"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -207,7 +220,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="@string/multiplication"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -217,7 +231,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="@string/division"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -227,7 +242,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="."
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -244,7 +260,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="@string/x_square"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -254,7 +271,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="@string/square_root_symbol"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -264,7 +282,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/bluePrimary"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="+/-"
                 android:maxLines="1"
                 android:autoSizeTextType="uniform"
@@ -281,8 +300,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:layout_weight="0.33"
-                android:backgroundTint="@color/bluePrimary"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="C"
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />
@@ -291,8 +311,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
-                android:layout_weight="0.67"
-                android:backgroundTint="@color/bluePrimary"
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:backgroundTint="?attr/colorPrimary"
                 android:text="="
                 android:autoSizeTextType="uniform"
                 app:cornerRadius="15dp" />

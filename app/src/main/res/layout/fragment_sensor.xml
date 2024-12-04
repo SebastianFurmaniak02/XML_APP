@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginBottom="85dp"
     >
 
     <TextView
@@ -13,18 +14,11 @@
         android:text="Sensor"
         android:textAlignment="center"
         android:textSize="25sp"
-        android:background="@color/bluePrimary" />
+        android:background="?attr/colorPrimary" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <Space
-            android:id="@+id/spacer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"/>
         <ImageView
             android:id="@+id/imageSun"
             android:layout_width="200dp"
@@ -41,47 +35,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/rounded_rectangle"
+            android:layout_marginTop="50dp"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
+            android:padding="10.dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spacer">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/TextViewSensor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:text="Sensor output: "
                 android:textAlignment="center"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toTopOf="@+id/progressBar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textSize="25sp" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
                 android:max="100"
                 android:min="0"
-                android:padding="5dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/TextViewSensorOutput"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:progressTint="?attr/colorPrimary" />
 
             <TextView
                 android:id="@+id/TextViewSensorOutput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textAlignment="center" />
 
         </LinearLayout>
 
